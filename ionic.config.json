@@ -1,7 +1,9 @@
 {
   "name": "coink_app",
   "integrations": {
-    "capacitor": {},
+    "capacitor": {
+      "enabled": false
+    },
     "cordova": {}
   },
   "type": "angular"
