@@ -1,0 +1,138 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button text="" color="green"></ion-back-button>
+      <ion-title class="header-title">DATOS DE CUENTA</ion-title>
+    </ion-buttons>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="8" class="ion-align-self-center">
+        <ion-img src="assets/svg/stepper-two.svg"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="formBasicData">
+    <ion-grid class="ion-padding-top">
+      <ion-row class="row-info-coink">
+        <ion-col size="4" size-md>
+          <ion-img src="assets/svg/oink-M.svg"></ion-img>
+        </ion-col>
+        <ion-col size="8" size-md class="ion-align-self-center">
+          <ion-row>
+            <ion-label color="greendark"><strong>¿CUÁLES SON TUS DATOS?</strong></ion-label>
+          </ion-row>
+          <ion-row class="ion-padding-top">
+            <ion-label>Ahora necesitamos saber algunos datos tuyos</ion-label>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <div class="hr-divider"></div>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-label class="header-title">Documento de identidad</ion-label>
+
+          <!-- Tipo de documento -->
+          <ion-item class="item-form ion-align-items-end">
+            <ion-label position="floating">Tipo de documento</ion-label>
+            <ion-select interface="action-sheet" class="custom-options" formControlName="documentType">
+              <ion-select-option *ngFor="let item of documentTypeList" [value]="item">
+                {{item.description}}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+          <app-form-control-error formControlName="documentType"></app-form-control-error>
+
+          <!-- Numero de documento -->
+          <ion-item class="item-form ion-align-items-end">
+            <ion-label position="floating">Número de documento</ion-label>
+            <ion-input type="tel" formControlName="documentNumber"></ion-input>
+          </ion-item>
+          <app-form-control-error formControlName="documentNumber"></app-form-control-error>
+
+          <!-- Fecha expedicion de documento -->
+          <ion-item class="item-form ion-align-items-end">
+            <ion-label position="floating">Fecha de expedición del documento</ion-label>
+            <ion-input type="date" placeholder="" formControlName="documentIssueDate"></ion-input>
+          </ion-item>
+          <app-form-control-error formControlName="documentIssueDate"></app-form-control-error>
+
+          <!-- Fecha de nacimiento -->
+          <ion-item class="item-form ion-align-items-end">
+            <ion-label position="floating">Fecha de nacimiento</ion-label>
+            <ion-input type="date" placeholder="" formControlName="birthDate"></ion-input>
+          </ion-item>
+          <app-form-control-error formControlName="birthDate"></app-form-control-error>
+
+          <!-- Genero -->
+          <ion-item class="item-form ion-align-items-end">
+            <ion-label position="floating">Genero</ion-label>
+            <ion-select interface="action-sheet" class="custom-options" formControlName="gender">
+              <ion-select-option *ngFor="let item of genderList" [value]="item">
+                {{item.name}}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+          <app-form-control-error formControlName="gender"></app-form-control-error>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-label class="header-title">Configura tu cuenta</ion-label>
+
+          <!-- Correo electrónico -->
+          <ion-item class="item-form ion-align-items-end">
+            <ion-label position="floating">Correo electrónico</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+          <app-form-control-error formControlName="email"></app-form-control-error>
+
+          <!-- Confirmar correo electrónico -->
+          <ion-item class="item-form ion-align-items-end">
+            <ion-label position="floating">Confirmar correo electrónico</ion-label>
+            <ion-input type="email" formControlName="emailconfirmation"></ion-input>
+            <ion-icon *ngIf="formBasicData.controls['emailconfirmation'].errors === null" [name]="'check-green'"
+              slot="end">
+            </ion-icon>
+
+          </ion-item>
+          <app-form-control-error formControlName="emailconfirmation"></app-form-control-error>
+
+          <!-- PIN de seguridad -->
+          <ion-item class="item-form ion-align-items-end">
+            <ion-label position="floating">PIN de seguridad</ion-label>
+            <ion-input [type]="showPassword? 'text':'password'" formControlName="pin"></ion-input>
+            <ion-icon [name]="showPassword? 'eye-off-icon':'eye-on-icon'" slot="end" (click)="switchEyeIcon('pin')">
+            </ion-icon>
+          </ion-item>
+          <app-form-control-error formControlName="pin"></app-form-control-error>
+
+          <!-- Confirmar PIN de seguridad -->
+          <ion-item class="item-form ion-align-items-end">
+            <ion-label position="floating">Confirmar PIN de seguridad</ion-label>
+            <ion-input [type]="showPasswordConfirmation? 'text':'password'" formControlName="pinConfirmation">
+            </ion-input>
+            <ion-icon [name]="showPasswordConfirmation? 'eye-off-icon':'eye-on-icon'" slot="end"
+              (click)="switchEyeIcon('pinConfirmation')"></ion-icon>
+          </ion-item>
+          <app-form-control-error formControlName="pinConfirmation"></app-form-control-error>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button class="button-login" [color]="formBasicData.invalid ? 'medium ':'green'" expand="block"
+            (click)="onSubmit()" [disabled]="formBasicData.invalid">SIGUIENTE</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

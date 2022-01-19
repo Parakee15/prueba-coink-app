@@ -1,0 +1,21 @@
+.container {
+  background-color: #ffffff;
+  margin-top: 50%;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-radius: 10px;
+}
+
+.body-text {
+  font-family: var(--ion-font-avenir-ligth);
+  font-weight: 600;
+}
+
+@import "../../../../global.scss";
+
+.button-footer {
+  @extend .button-login;
+  margin-top: 5px;
+  text-transform: none;
+  font-size: 16px;
+}

@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button text="" color="green"></ion-back-button>
+      <ion-title class="header-title">FINALIZAR</ion-title>
+    </ion-buttons>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="8" class="ion-align-self-center">
+        <ion-img src="assets/svg/stepper-three.svg"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid class="ion-padding-top">
+    <ion-row class="row-info-coink">
+      <ion-col size="4" size-md>
+        <ion-img src="assets/svg/oink-policia.svg"></ion-img>
+      </ion-col>
+      <ion-col size="8" size-md class="ion-align-self-center">
+        <ion-row>
+          <ion-label color="greendark"><strong>ESTAS MUY CERCA DE SER PARTE DE COINK.</strong></ion-label>
+        </ion-row>
+        <ion-row class="ion-padding-top">
+          <ion-label>
+            Solo es necesario que leas detenidamente el contrato que se encuentra al final de esta pantalla y lo
+            aceptes.
+          </ion-label>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-label class="header-title">LO MÁS IMPORTANTE</ion-label>
+        <p>
+          Para la apertura del Depósito de Bajo Monto en COINK debes ser una persona natural que de acuerdo con
+          nuestra
+          legislación vigente te encuentres en plena capacidad para adquirir derechos y contraer obligaciones. Abrirás
+          una cuenta COINK de Bajo Monto la cual te permitirá tener un saldo hasta por 8 salarios mínimos en el mes y
+          realizar débitos por el mismo valor. Si deseas sobrepasar estos límites debes solicitarnos la apertura de un
+          Depósito Ordinario COINK Persona Natural. Solo puedes tener una cuenta COINK de Bajo Monto y podrás utilizar
+          tu dispositivo móvil para consultar tu saldo, tus movimientos, realizar tus transacciones y administrar tu
+          cuenta. Recuerda que no necesitas saldo mínimo ni monto inicial para su apertura.
+        </p>
+
+        <ion-label class="header-title text-decoration-underline"> Lee tu contrato</ion-label>
+
+        <ion-row class="ion-padding-top checkbox">
+          <ion-checkbox [(ngModel)]="checkTems"></ion-checkbox>
+          <ion-label>He leído ya acepto el contrato</ion-label>
+        </ion-row>
+
+        <ion-button expand="block" [color]="checkTems ? 'green ':'medium'" class="button-login" (click)="onSubmit()">
+          ACEPTAR</ion-button>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>

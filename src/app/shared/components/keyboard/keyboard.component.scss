@@ -1,0 +1,22 @@
+.button-ok {
+  --border-radius: 50%;
+  width: 46px;
+  height: 46px;
+}
+
+.key-number {
+  font-size: 32px;
+  color: #004b40;
+  font-family: var(--ion-font-montserrat-bold);
+  font-weight: 500;
+}
+
+.ripple-effect {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+.width-70 {
+  width: 70%;
+}

@@ -1,0 +1,14 @@
+p {
+  font-family: var(--ion-font-avenir-ligth);
+  font-weight: 600;
+}
+
+.checkbox {
+  ion-label {
+    color: #004b40;
+    font-family: var(--ion-font-avenir-ligth);
+    font-weight: 700;
+    font-size: 16px;
+    padding-left: 5px;
+  }
+}

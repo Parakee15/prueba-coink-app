@@ -1,0 +1,28 @@
+<ion-grid>
+    <ion-row *ngFor="let item of arrayKeys">
+        <ion-col *ngFor="let key of item" size="4" size-md class="ion-text-center ion-align-self-center">
+            <!-- string -->
+            <div class="ion-activatable ripple-parent" *ngIf="key.type === 'number'"
+                (click)="pressNumberKey.emit(key.value)">
+                <ion-label class="key-number">
+                    {{key.value}}
+                </ion-label>
+                <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+            </div>
+            <!-- back button -->
+            <div class="ion-activatable ripple-parent text-align-webkit-center" *ngIf="key.type === 'back'"
+                (click)="pressBackButton.emit()">
+                <ion-img [src]="key.value" class="width-70"></ion-img>
+                <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+            </div>
+            <!-- OK button -->
+            <div *ngIf="key.type === 'button'">
+                <!-- Round -->
+                <ion-button [color]="disabledOkButton? 'medium':'green'" [disabled]="disabledOkButton"
+                    (click)="pressOkButton.emit()" class="button-ok">
+                    <ion-img [src]="key.value"></ion-img>
+                </ion-button>
+            </div>
+        </ion-col>
+    </ion-row>
+</ion-grid>

@@ -1,0 +1,38 @@
+<div class="container">
+    <ion-grid>
+        <ion-row class="ion-justify-content-end" *ngIf="showButtonClose">
+            <ion-col size="2" (click)="dismiss()">
+                <ion-icon name='close-icon'></ion-icon>
+            </ion-col>
+        </ion-row>
+        <!-- header -->
+        <ion-row *ngIf="title">
+            <ion-col class="ion-align-self-center ion-text-center">
+                <ion-label class="header-title" color="danger">{{title}} </ion-label>
+            </ion-col>
+        </ion-row>
+
+        <!-- body -->
+        <ion-row *ngIf="msg">
+            <ion-col class="ion-align-self-center ion-text-center body-text">
+                <ion-label> {{msg}} </ion-label>
+            </ion-col>
+        </ion-row>
+
+        <!-- button -->
+        <ion-row *ngIf="nameButton">
+            <ion-col class="ion-align-self-center ion-text-center body-text">
+                <ion-button fill="clear" color="greendark" class="button-footer" (click)="dismiss('reenviar mensaje')">
+                    {{nameButton}}
+                </ion-button>
+            </ion-col>
+        </ion-row>
+
+        <!-- innerHtml -->
+        <ion-row *ngIf="innerHtml">
+            <ion-col class="ion-align-self-center ion-text-center body-text">
+                <div [innerHtml]="innerHtml"></div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</div>

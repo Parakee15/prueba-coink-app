@@ -1,0 +1,120 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button text="" color="green"></ion-back-button>
+      <ion-title class="header-title">DATOS DE CUENTA</ion-title>
+    </ion-buttons>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="8" class="ion-align-self-center">
+        <ion-img src="assets/svg/stepper-two.svg"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid class="ion-padding-top">
+    <ion-row class="row-info-coink">
+      <ion-col size="4" size-md>
+        <ion-img src="assets/svg/oink-M.svg"></ion-img>
+      </ion-col>
+      <ion-col size="8" size-md class="ion-align-self-center">
+        <ion-row>
+          <ion-label color="greendark"><strong>VERIFICA TUS DATOS</strong></ion-label>
+        </ion-row>
+        <ion-row class="ion-padding-top">
+          <ion-label>Antes de continuar, verifica que todo esté en orden</ion-label>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div class="hr-divider"></div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-label class="header-title">Resumen de tu información</ion-label>
+
+        <!-- Correo electrónico -->
+
+        <ion-item>
+          <ion-label class="ion-text-wrap">
+            <ion-text>
+              <strong>Tipo de documento</strong>
+            </ion-text>
+            <br>
+            <ion-text>
+              {{basicData.documentType.description}}
+            </ion-text>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label class="ion-text-wrap">
+            <ion-text>
+              <strong>Número de documento</strong>
+            </ion-text>
+            <br>
+            <ion-text>
+              {{basicData.documentNumber}}
+            </ion-text>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label class="ion-text-wrap">
+            <ion-text>
+              <strong>Fecha de expedición del documento</strong>
+            </ion-text>
+            <br>
+            <ion-text>
+              {{basicData.documentIssueDate}}
+            </ion-text>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label class="ion-text-wrap">
+            <ion-text>
+              <strong>Fecha de nacimiento</strong>
+            </ion-text>
+            <br>
+            <ion-text>
+              {{basicData.birthDate}}
+            </ion-text>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label class="ion-text-wrap">
+            <ion-text>
+              <strong>Genero</strong>
+            </ion-text>
+            <br>
+            <ion-text>
+              {{basicData.gender.name}}
+            </ion-text>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label class="ion-text-wrap">
+            <ion-text>
+              <strong>Correo electrónico</strong>
+            </ion-text>
+            <br>
+            <ion-text>
+              {{basicData.email}}
+            </ion-text>
+          </ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button class="button-login" color="green" expand="block" (click)="onSubmit()">SIGUIENTE</ion-button>
+        <ion-button expand="block" color="greendark" class="button-login ion-margin-top" (click)="_location.back()">
+          REGRESAR
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

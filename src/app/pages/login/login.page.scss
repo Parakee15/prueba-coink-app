@@ -1,0 +1,17 @@
+.slogan {
+  color: var(--ion-color-green);
+  font-size: 18px;
+  font-family: var(--ion-font-montserrat-bold);
+  font-weight: 700;
+}
+
+.logo {
+  width: 144px;
+}
+
+ion-grid {
+  height: 100%;
+  ion-row {
+    height: 50%;
+  }
+}
